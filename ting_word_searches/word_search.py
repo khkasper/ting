@@ -1,16 +1,16 @@
 def exists_word(word, instance):
     word_list = []
-    occurences = []
+    occurrences = []
 
     for index, line in enumerate(instance._data[0]["linhas_do_arquivo"]):
         if word.lower() in line.lower():
-            occurences.append({"linha": index + 1})
+            occurrences.append({"linha": index + 1})
 
-    if len(occurences) > 0:
+    if len(occurrences) > 0:
         word_list.append({
             "palavra": word,
             "arquivo": instance._data[0]["nome_do_arquivo"],
-            "ocorrencias": occurences,
+            "ocorrencias": occurrences,
         })
 
     return word_list
@@ -18,17 +18,17 @@ def exists_word(word, instance):
 
 def search_by_word(word, instance):
     word_list = []
-    occurences = []
+    occurrences = []
 
     for index, line in enumerate(instance._data[0]["linhas_do_arquivo"]):
         if word.lower() in line.lower():
-            occurences.append({"linha": index + 1, "conteudo": line})
+            occurrences.append({"linha": index + 1, "conteudo": line})
 
-    if len(occurences) > 0:
+    if len(occurrences) > 0:
         word_list.append({
             "palavra": word,
             "arquivo": instance._data[0]["nome_do_arquivo"],
-            "ocorrencias": occurences,
+            "ocorrencias": occurrences,
         })
 
     return word_list
